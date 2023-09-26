@@ -26,5 +26,5 @@ jobs:
       - name: SAST
         shell: pwsh
         run: |
-          echo "WD: $WorkingDirectory"
+          echo $sevSecGw
           echo "GITHUB_WORKSPACE: ${GITHUB_WORKSPACE}"
