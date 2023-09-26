@@ -1,3 +1,6 @@
+env:
+  NAME: 'Snyk Demo'
+
 name: SAST
 on:
   push:
@@ -13,4 +16,4 @@ jobs:
       - name: SAST
         shell: pwsh
         run: |
-          $PSversionTable
+          echo $NAME
