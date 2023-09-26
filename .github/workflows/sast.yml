@@ -27,3 +27,4 @@ jobs:
         shell: pwsh
         run: |
           echo ${env:WorkingDirectory}
+           echo "GITHUB_WORKSPACE: ${GITHUB_WORKSPACE}"
