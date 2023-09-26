@@ -1,5 +1,15 @@
 env:
-  NAME: 'Snyk Demo'
+  aseApiKeyId: xxxxxxxxxxxxxxxx
+  aseApiKeySecret: xxxxxxxxxxxxxxxx
+  compiledArtifactFolder: none
+  scanConfig: Normal scan
+  aseAppName: $(Build.Repository.Name)
+  aseHostname: xxxxxxxxxxxxxxxx
+  aseToken: C:\ProgramData\HCL\AppScanSource\config\ounceautod.token
+  sevSecGw: highIssues
+  maxIssuesAllowed: 100
+  WorkingDirectory: $GITHUB_WORKSPACE
+  BuildNumber: $(Build.BuildNumber)
 
 name: SAST
 on:
@@ -16,4 +26,4 @@ jobs:
       - name: SAST
         shell: pwsh
         run: |
-          echo ${env:NAME}
+          echo ${env:WorkingDirectory}
