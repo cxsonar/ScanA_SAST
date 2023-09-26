@@ -8,7 +8,7 @@ env:
   aseToken: C:\ProgramData\HCL\AppScanSource\config\ounceautod.token
   sevSecGw: highIssues
   maxIssuesAllowed: 100
-  WorkingDirectory: ${env.GITHUB_WORKSPACE}
+  WorkingDirectory: $Env.GITHUB_WORKSPACE
   BuildNumber: $(Build.BuildNumber)
 
 name: SAST
