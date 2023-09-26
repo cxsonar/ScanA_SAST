@@ -16,4 +16,4 @@ jobs:
       - name: SAST
         shell: pwsh
         run: |
-          echo $NAME
+          $NAME
