@@ -39,4 +39,4 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: sast_report
-          path: $aseAppName.ozasmt
+          path: /*.ozasmt
