@@ -3,7 +3,7 @@ env:
   aseApiKeySecret: O2VUV2HXKU92Y27OE1HNRR147VP9CCWI
   compiledArtifactFolder: none
   scanConfig: Normal scan
-  aseAppName: ${{ github.event.repository.name }}
+  aseAppName: ${{GITHUB.EVENT.REPOSITORY.NAME}}
   aseHostname: winappscan.lab.local
   aseToken: C:\ProgramData\HCL\AppScanSource\config\ounceautod.token
   sevSecGw: highIssues
@@ -26,8 +26,4 @@ jobs:
       - name: SAST
         shell: pwsh
         run: |
-          $Env:WorkingDirectory
-          $Env:BuildNumber
-          $Env:aseAppName
-          $Env:GITHUB_RUN_NUMBER	
-          $Env:GITHUB_RUN_ID	
+          echo "worked"
