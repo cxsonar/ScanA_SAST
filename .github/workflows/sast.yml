@@ -9,7 +9,7 @@ env:
   sevSecGw: highIssues
   maxIssuesAllowed: 100
   WorkingDirectory: ${{GITHUB.WORKSPACE}}
-  BuildNumber: ${{GITHUB.RUN.NUMBER}}
+  BuildNumber: ${{GITHUB.RUN_NUMBER}}
 
 name: SAST
 on:
