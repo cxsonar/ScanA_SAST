@@ -27,3 +27,4 @@ jobs:
         shell: pwsh
         run: |
           $Env:WorkingDirectory
+          $Env:GITHUB_WORKSPACE
