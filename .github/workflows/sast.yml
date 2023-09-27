@@ -23,7 +23,7 @@ jobs:
     runs-on: self-hosted
     steps:
       - uses: actions/checkout@v3
-      - name: sast_scan
+      - name: Scan SAST
         shell: pwsh
         run: |
           Invoke-WebRequest -Uri https://raw.githubusercontent.com/jrocia/AppScanSRC-and-AzureDevOps-Integration/main/scripts/appscanase_create_application_ase.ps1 -OutFile appscanase_create_application_ase.ps1
@@ -38,5 +38,5 @@ jobs:
           .\appscansrc_check_security_gate.ps1
       - uses: actions/upload-artifact@v3
         with:
-          name: sast_report
-          path: /*.ozasmt
+          name: Upload report
+          path: $Env:WorkingDirectory\*.pdf
