@@ -26,4 +26,6 @@ jobs:
       - name: SAST
         shell: pwsh
         run: |
+          $Env:sevSecGw
+          $Env:GITHUB_WORKSPACE
           $Env:GITHUB_ENV
