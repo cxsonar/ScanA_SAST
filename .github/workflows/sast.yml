@@ -29,5 +29,5 @@ jobs:
           $Env:WorkingDirectory
           $Env:BuildNumber
           $Env:aseAppName
-          $GITHUB_RUN_NUMBER	
-          $GITHUB_RUN_ID	
+          $Env:GITHUB_RUN_NUMBER	
+          $Env:GITHUB_RUN_ID	
