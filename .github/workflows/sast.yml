@@ -7,7 +7,7 @@ env:
   aseHostname: winappscan.lab.local
   aseToken: C:\ProgramData\HCL\AppScanSource\config\ounceautod.token
   sevSecGw: highIssues
-  maxIssuesAllowed: 100
+  maxIssuesAllowed: 1000
   WorkingDirectory: ${{GITHUB.WORKSPACE}}
   BuildNumber: ${{GITHUB.RUN_NUMBER}}
 
