@@ -3,7 +3,7 @@ env:
   aseApiKeySecret: O2VUV2HXKU92Y27OE1HNRR147VP9CCWI
   compiledArtifactFolder: none
   scanConfig: Normal scan
-  aseAppName: ${{GITHUB.REPOSITORY.NAME}}
+  aseAppName: ${{GITHUB.REPOSITORY}}
   aseHostname: winappscan.lab.local
   aseToken: C:\ProgramData\HCL\AppScanSource\config\ounceautod.token
   sevSecGw: highIssues
