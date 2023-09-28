@@ -11,12 +11,8 @@ env:
   WorkingDirectory: ${{GITHUB.WORKSPACE}}
   BuildNumber: ${{GITHUB.RUN_NUMBER}}
 
-name: SAST
+name: HCL AppScan Source
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
   workflow_dispatch:
 jobs:
   build:
