@@ -39,4 +39,4 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: Upload report
-          path: $Env:WorkingDirectory\*.pdf
+          path: ${{GITHUB.EVENT.REPOSITORY.NAME}}-${{GITHUB.RUN_NUMBER}}.pdf
