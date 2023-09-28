@@ -40,3 +40,8 @@ jobs:
         with:
           name: Upload report
           path: ${{GITHUB.EVENT.REPOSITORY.NAME}}-${{GITHUB.RUN_NUMBER}}.pdf
+      - uses: github/codeql-action/upload-sarif@v2
+        with:
+          name: Upload SARIF file
+          sarif_file: scan.sarif
+          category: my-analysis-tool
