@@ -40,5 +40,5 @@ jobs:
           path: ${{GITHUB.EVENT.REPOSITORY.NAME}}-${{GITHUB.RUN_NUMBER}}.pdf
       - uses: github/codeql-action/upload-sarif@v2
         with:
-          sarif_file: srcresult.sarif
+          sarif_file: src2result.sarif
           category: my-analysis-tool
