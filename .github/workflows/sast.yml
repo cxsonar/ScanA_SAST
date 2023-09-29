@@ -1,7 +1,7 @@
 env:
   aseApiKeyId: 6Q3W37Y8XIDPGEKX06ASNM7PZR87EX0V
   aseApiKeySecret: O2VUV2HXKU92Y27OE1HNRR147VP9CCWI
-  compiledArtifactFolder: none
+  compiledArtifactFolder: build
   scanConfig: Normal scan
   aseAppName: ${{GITHUB.EVENT.REPOSITORY.NAME}}
   aseHostname: winappscan.lab.local
