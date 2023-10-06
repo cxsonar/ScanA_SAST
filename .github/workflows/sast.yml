@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Scan SAST
-        shell: pwsh
+        shell: powershell
         run: |
           Invoke-WebRequest -Uri https://raw.githubusercontent.com/jrocia/AppScanSRC-and-GithubActions-Integration/main/scripts/appscanase_create_application_ase.ps1 -OutFile appscanase_create_application_ase.ps1
           .\appscanase_create_application_ase.ps1
