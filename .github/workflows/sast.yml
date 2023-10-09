@@ -21,7 +21,7 @@ jobs:
           .\appscansrc_create_config_scan_folder.ps1
           Invoke-WebRequest -Uri https://raw.githubusercontent.com/jrocia/AppScanSRC-and-GithubActions-Integration/main/scripts/appscansrc_scan.ps1 -OutFile appscansrc_scan.ps1
           .\appscansrc_scan.ps1
-          .\appscansrc_check_security_gate.ps1
+          appscansrc_check_security_gate.ps1
       - uses: actions/upload-artifact@v3
         with:
           name: Upload report
