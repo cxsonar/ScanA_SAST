@@ -17,9 +17,6 @@ jobs:
       - name: Scan SAST
         shell: powershell
         run: |
-          Invoke-WebRequest -Uri https://raw.githubusercontent.com/jrocia/AppScanSRC-and-GithubActions-Integration/main/scripts/appscansrc_create_config_scan_folder.ps1 -OutFile appscansrc_create_config_scan_folder.ps1
-#          .\appscansrc_create_config_scan_folder.ps1
-#          Invoke-WebRequest -Uri https://raw.githubusercontent.com/jrocia/AppScanSRC-and-GithubActions-Integration/main/scripts/appscansrc_scan.ps1 -OutFile appscansrc_scan.ps1
           .\sast_scan.ps1
           AppScanSrcCli.exe script script.scan
 #          appscansrc_check_security_gate.ps1
