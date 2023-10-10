@@ -8,7 +8,7 @@ env:
 
 name: HCL AppScan Source
 on:
-  workflow_dispatch:
+  workflow_dispatch
 jobs:
   build:
     runs-on: self-hosted
