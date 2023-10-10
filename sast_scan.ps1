@@ -7,6 +7,5 @@ write-host "======== Step: Creating a config scan folder ========"
   write-output "report Findings pdf-detailed `"altoromutual.pdf`" `"altoromutual.ozasmt`" -includeSrcBefore:5 -includeSrcAfter:5 -includeTrace:definitive -includeTrace:suspect -includeHowToFix" >> script.scan
   write-output "pa `"altoromutual.ozasmt`"" >> script.scan
   write-output "exit" >> script.scan
-  
   write-host "Config file created"
 }
