@@ -1,6 +1,6 @@
 name: "HCL Appscan360 SAST"
-# on:
-#   workflow_dispatch
+on:
+  workflow_dispatch:
 jobs:
   scan:
     runs-on: self-hosted
