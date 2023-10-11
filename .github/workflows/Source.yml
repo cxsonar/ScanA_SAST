@@ -1,0 +1,34 @@
+env:
+  compiledArtifactFolder: none
+  scanConfig: Normal scan
+  aseAppName: ${{GITHUB.EVENT.REPOSITORY.NAME}}
+  sevSecGw: highIssues
+  maxIssuesAllowed: 1000
+  WorkingDirectory: ${{GITHUB.WORKSPACE}}
+  BuildNumber: ${{GITHUB.RUN_NUMBER}}
+
+name: HCL AppScan Source standalone
+on:
+  workflow_dispatch
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v3
+      - name: Scan SAST
+        shell: powershell
+        run: |
+          Invoke-WebRequest -Uri https://raw.githubusercontent.com/ctibordudahcl/Github_Appscan_Source_Scan/main/scripts/appscansrc_create_config_scan_folder.ps1 -OutFile appscansrc_create_config_scan_folder.ps1
+          .\appscansrc_create_config_scan_folder.ps1
+          Invoke-WebRequest -Uri https://raw.githubusercontent.com/ctibordudahcl/Github_Appscan_Source_Scan/main/scripts/appscansrc_scan.ps1 -OutFile appscansrc_scan.ps1
+          .\appscansrc_scan.ps1
+          Invoke-WebRequest -Uri https://raw.githubusercontent.com/ctibordudahcl/Github_Appscan_Source_Scan/main/scripts/appscansrc_check_security_gate.ps1 -OutFile appscansrc_check_security_gate.ps1
+          .\appscansrc_check_security_gate.ps1
+      - uses: actions/upload-artifact@v3
+        with:
+          name: Upload report
+          path: ${{GITHUB.EVENT.REPOSITORY.NAME}}-${{GITHUB.RUN_NUMBER}}.pdf
+      - uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: src2result.sarif
+          category: my-analysis-tool
