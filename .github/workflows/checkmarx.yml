@@ -46,7 +46,7 @@ jobs:
           # Break build based on Checkmarx findings?
           #break_build: # optional
           # Incremental Scans?
-          #incremental: true
+          incremental: false
           # GitHub API Token (note: you don't have to create secrets.GITHUB_TOKEN, it is created automatically and will not appear in your repo's custom secrets)
           github_token: ${{secrets.GH_TOKEN}}
           # extra parameters
