@@ -1,0 +1,16 @@
+name: Code Scan
+    uses: checkmarx-ts/checkmarx-cxflow-github-action@v1.9
+    with:
+      project: ${{ inputs.repository_name }}
+      team: ${{ inputs.checkmarx_team }}
+      break_build: true
+      preset: ASA-Premium
+      checkmarx_url: https://itv.checkmarx.net
+      checkmarx_username: ${{ inputs.checkmarx_username }}
+      checkmarx_password: ${{ inputs.checkmarx_password }}
+      checkmarx_client_secret: ${{ inputs.checkmarx_client_secret }}
+      incremental: true
+      github_token: ${{ inputs.github_token }}
+      scanners: sast
+      bug_tracker: GitHub
+      params: --checkmarx.settings-override=true --checkmarx.incremental-num-scans=10 --github.max-delay=2 --namespace=${{ inputs.repository_owner }} --repo-name=${{ inputs.repository_name }} --branch=${{ inputs.branch }} --repo-url={{ inputs.repo_url }} --merge-id=${{ inputs.merge_id }} --cx-flow.filter-severity=High,Medium,Low
